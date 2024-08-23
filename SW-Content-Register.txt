@@ -1,0 +1,11 @@
+NXP Software Content Register
+
+Name: dm-sja1124evb-spi-to-quad--lin-bridge-demo-app
+Version: 1.0
+Outgoing License: BSD-3-Clause
+License File: LICENSE.txt
+Description: This example provides CMSIS Compliant APIs to control different LIN channel and device configuration of sja1124 for FRDM-MCXN947 and FRDM-MCXA153.
+Release location: https://github.com/nxp-appcodehub/dm-sja1124evb-spi-to-quad--lin-bridge-demo-app
+Origin: NXP (BSD-3-Clause)
+        ARM CMSIS 5.4.0 (Apache-2.0) - https://github.com/ARM-software/CMSIS_5/releases/tag/5.4.0
+                                                           
