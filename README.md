@@ -32,7 +32,7 @@ This demo application provides a command line interface which allows the user to
   - Hardware or software checksum generation
   - The fractional baud rate generator
 
-#### Boards: FRDM-MCXN947, FRDM-MCXA153
+#### Boards: FRDM-MCXN947, FRDM-MCXA153, FRDM-MCXC444
 #### Categories: Bridge
 #### Peripherals: SPI
 #### Toolchains: MCUXpresso IDE
@@ -43,16 +43,16 @@ This demo application provides a command line interface which allows the user to
 3. [Setup](#step3)
 4. [Test Application Steps](#step4)
 5. [Known Limitations](#step5)
-6. [FAQs](#step6) 
-7. [Support](#step7)
-8. [Release Notes](#step8)
+6. [Support](#step6)
+7. [Release Notes](#step7)
 
 ## 1. Software<a name="step1"></a>
 - [IoT Sensing SDK (ISSDK) v1.8](https://nxp.com/iot-sensing-sdk) offered as middleware in MCUXpresso SDK for supported platforms
 - [MCUXpresso IDE v11.9.0](https://www.nxp.com/design/design-center/software/development-software/mcuxpresso-software-and-tools-/mcuxpresso-integrated-development-environment-ide:MCUXpresso-IDE)
+- [MCUXpresso IDE v24.12.148-](https://www.nxp.com/design/design-center/software/development-software/mcuxpresso-software-and-tools-/mcuxpresso-integrated-development-environment-ide:MCUXpresso-IDE)used for FRDM-MCXC444
 
 ## 2. Hardware<a name="step2"></a>
-- FRDM-MCXN947 and FRDM-MCXA153 MCU board
+- FRDM-MCXN947 or FRDM-MCXA153 or FRDM-MCXC444 MCU board
 - [SJA1124EVB](https://www.nxp.com/part/SJA1124EVB) 
 - Personal Computer
 - Mini/micro C USB cable
@@ -60,9 +60,11 @@ This demo application provides a command line interface which allows the user to
 
 ## 3. Setup<a name="step3"></a>
 ### 3.1 Step 1: Download and Install required Software(s)
-- Install MCUXpresso IDE 11.9.0
+- Install MCUXpresso IDE 11.9.0 for FRDM-MCXN947 and FRDM-MCXA153 
+- Install MCUXpresso IDE 24.12 for FRDM-MCXC444
 - Download and Install [MCUXpresso SDK v2.14.0 for FRDM-MCXN947](https://mcuxpresso.nxp.com/en/builder?hw=FRDM-MCXN947). Make sure to select ISSDK  middleware while building SDK.
 - Download and Install [MCUXpresso SDK v2.14.2 for FRDM-MCXA153](https://mcuxpresso.nxp.com/en/builder?hw=FRDM-MCXA153). Make sure to select ISSDK  middleware while building SDK.
+- Download and Install [MCUXpresso SDK v24.12.00 for FRDM-MCXC444](https://mcuxpresso.nxp.com/en/builder?hw=FRDM-MCXC444). Make sure to select ISSDK  middleware while building SDK.
 - Install Git v2.39.0 (for cloning and running west commands).
 - Install Putty/Teraterm for UART.
 
@@ -77,18 +79,24 @@ This demo application provides a command line interface which allows the user to
 
 ### 3.3 Step 3: Build example projects
 - Open MCUXpresso IDE and select a directory to create your workspace.
-- Install MCXUpresso SDK 2.14.x for FRDM-MCX947, FRDM-MCXA153 (drag and drop SDK zip into "Installed SDK" view) into MCUXpresso IDE.
+- Install MCXUpresso SDK 2.14.x for FRDM-MCX947, FRDM-MCXA153 and install MCUXpresso SDK v24.12.00 for FRDM-MCXC444(drag and drop SDK zip into "Installed SDK" view) into MCUXpresso IDE.
 - Go to "Quickstart Panel" and click on "Import Project(s) from file system",
 - Select "Project directory (unpacked)" and browse to the cloned project folder.
 - Select example projects that you want to open and run.
 - Right click on project and select build to start building the project.
 
 ## 4. Test Application Steps<a name="step4"></a>
-- User needs to make the connection between shield board (SJA1124EVB) and Base boards (MCXA153 & MCXN947) using jumper wires.
+- User needs to make the connection between shield board (SJA1124EVB) and Base boards (MCXA153 or MCXN947 or MCXC444) using jumper wires.
 
   [<img src="./images/Jumper_settings.PNG" width="400"/>](Jumper_settings.PNG)
 
+- Setup Image of shield board (SJA1124EVB) and Base boards (MCXA153) using jumper wires.
+
   [<img src="./images/Hardware_Setup.jpg" width="300"/>](Hardware_Setup.jpg)
+
+- Setup Image of shield board (SJA1124EVB) and Base boards (MCXC444) using jumper wires.
+
+  [<img src="./images/Hardware_Setup_MCXC444.jpg" width="300"/>](Hardware_Setup.jpg)
 
 - User need to check COM port after connecting USB cable between Host PC and Target Board via device manager.
 
@@ -259,14 +267,11 @@ The SJA1124 supports two main operating modes:
     
 2) Do not stack the SJA1124EVB on base boards via arduino header. SJA1124EVB requires external battery supply voltage(VBAT) to operate in normal mode and due to stacking high voltage pin which is connected with the base board can corrupt the base board.
 
-## 6. FAQs<a name="step6"></a>
-*No FAQs have been identified for this project.*
-
-## 7. Support<a name="step7"></a>
+## 6. Support<a name="step6"></a>
 
 #### Project Metadata
 <!----- Boards ----->
-[![Board badge](https://img.shields.io/badge/Board-FRDM&ndash;MCXN947-blue)](https://github.com/search?q=org%3Anxp-appcodehub+FRDM-MCXN947+in%3Areadme&type=Repositories) [![Board badge](https://img.shields.io/badge/Board-FRDM&ndash;MCXA153-blue)](https://github.com/search?q=org%3Anxp-appcodehub+FRDM-MCXA153+in%3Areadme&type=Repositories)
+[![Board badge](https://img.shields.io/badge/Board-FRDM&ndash;MCXN947-blue)](https://github.com/search?q=org%3Anxp-appcodehub+FRDM-MCXN947+in%3Areadme&type=Repositories) [![Board badge](https://img.shields.io/badge/Board-FRDM&ndash;MCXA153-blue)](https://github.com/search?q=org%3Anxp-appcodehub+FRDM-MCXA153+in%3Areadme&type=Repositories) [![Board badge](https://img.shields.io/badge/Board-FRDM&ndash;MCXC444-blue)](https://github.com/search?q=org%3Anxp-appcodehub+FRDM-MCXC444+in%3Areadme&type=Repositories)
 
 <!----- Categories ----->
 [![Category badge](https://img.shields.io/badge/Category-BRIDGE-yellowgreen)](https://github.com/search?q=org%3Anxp-appcodehub+bridge+in%3Areadme&type=Repositories)
@@ -286,8 +291,9 @@ Questions regarding the content/correctness of this example can be entered as is
 [![Follow us on Facebook](https://img.shields.io/badge/Facebook-Follow%20us%20on%20Facebook-blue.svg)](https://www.facebook.com/nxpsemi/)
 [![Follow us on Twitter](https://img.shields.io/badge/Twitter-Follow%20us%20on%20Twitter-white.svg)](https://twitter.com/NXP)
 
-## 8. Release Notes<a name="step8"></a>
+## 7. Release Notes<a name="step7"></a>
 | Version | Description / Update                           | Date                        |
 |:-------:|------------------------------------------------|----------------------------:|
 | 1.0     | Initial release on Application Code Hub        | Aug 30<sup>th</sup> 2024 |
+| 2.0     | Second  release on Application Code Hub        | May 12<sup>th</sup> 2025 |
 
